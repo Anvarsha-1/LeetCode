@@ -16,7 +16,6 @@ var maxDistance = function(colors) {
         l++
       }
       else{
-        console.log(j,i)
         maxDis = Math.max(j-i,k-l,maxDis)
         j--
         l++
