@@ -12,14 +12,12 @@
  * @return {TreeNode}
  */
 var searchBST = function(root, val) {
-    console.log(root.val)
     return levelOrder(root,val)
 };
 
 function levelOrder(root,val){
     let cur = root
     while(cur){
-        console.log("cur",cur.val)
         if(cur.val===val){
             return cur
         }
