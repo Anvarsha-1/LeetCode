@@ -29,14 +29,15 @@ function checkMatching(q, d, r) {
         if (q[k] !== d[k]) {
             limit++
         }
+        if (limit > 2) {
+            break
+        }
         k++
     }
 
     if (limit < 3) {
-        if (!r.includes(q)) {
-            r.push(q)
-            added = true
-        }
+        r.push(q)
+        added = true
         return added
     }
 }
