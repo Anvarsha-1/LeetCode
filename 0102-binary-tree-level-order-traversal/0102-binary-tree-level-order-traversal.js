@@ -19,7 +19,6 @@ var levelOrder = function (root) {
         let len = queue.length
         for (let  i = 0; i < len; i++) {
             let cur = queue.shift()
-            console.log(cur.val,root.val)
             curLevel.push(cur.val)
             if(cur.left){
                 queue.push(cur.left)
