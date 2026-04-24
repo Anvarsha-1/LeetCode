@@ -15,7 +15,5 @@ var furthestDistanceFromOrigin = function(moves) {
             dash++
         }
     }
-    let max =  Math.max(left,right)
-    let min = Math.min(left,right)
-    return (max+dash)-min
+    return Math.abs(left-right)+dash
 };
