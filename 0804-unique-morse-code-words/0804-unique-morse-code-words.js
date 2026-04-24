@@ -14,10 +14,7 @@ for(let i=0;i<words.length;i++){
          mouseWord +=dicti[words[i][j]]
     }
     console.log(mouseWord)
-    if(seen.has(mouseWord)){
-        
-    }else{
-        seen.add(mouseWord)
+    if(!seen.has(mouseWord)){
         count++
     }
 }return count
