@@ -10,7 +10,6 @@ var findWords = function(words) {
         let check = []
         for(let char of word){
             let str = char.toLowerCase()
-            console.log(str)
             if(check.length===0){
                 check.push(alpha[str])
                 continue
@@ -20,7 +19,6 @@ var findWords = function(words) {
             }
             check.push(alpha[str])
         }
-        console.log("check",check.length,"word",word.length)
         if(check.length===word.length){
             result.push(word)
         }
