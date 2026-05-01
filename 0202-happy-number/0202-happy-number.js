@@ -7,16 +7,15 @@ var isHappy = function(n) {
     let number = n
     let seen = new Set()
     while(n){
-        let resulttrack = 0
         let str = number.toString().split("")
+        number = 0
         for(let num of str){
-             resulttrack +=Number(num*num)
+             number +=Number(num*num)
         }
-        if(seen.has(resulttrack)){
+        if(seen.has(number)){
             return false
         }
-        seen.add(resulttrack)
-        number = resulttrack
-        if(resulttrack===1) return true
+        seen.add(number)
+        if(number===1) return true
     }return false
 };
