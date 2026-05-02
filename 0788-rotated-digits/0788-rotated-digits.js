@@ -13,13 +13,15 @@ var rotatedDigits = function(n) {
         while(num>=1){
             let digit = num%10
             num = Math.floor(num/10)
-            if(digit===2|| digit===5 || digit===9 || digit===6){
-              goodNum = true
-            }
+
             if(digit===3 || digit===4 || digit===7){
                 isValid = false
                 break
             }
+
+            if(digit===2|| digit===5 || digit===9 || digit===6){
+              goodNum = true
+            }   
         }
         if(goodNum && isValid){
             count++
