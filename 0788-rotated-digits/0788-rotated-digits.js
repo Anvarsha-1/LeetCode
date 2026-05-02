@@ -4,26 +4,25 @@
  */
 var rotatedDigits = function(n) {
     if(n===1) return 0
-    let num = n
-    let count = 0
-    while(num>=1){
-        let check = num
+   
+     let count = 0
+   for(let i=0;i<=n;i++){
+        let num = i
         let goodNum = false
-        while(check>=1){
-            let digit = check%10
-            check = Math.floor(check/10)
+        let isValid = true
+        while(num>=1){
+            let digit = num%10
+            num = Math.floor(num/10)
             if(digit===2|| digit===5 || digit===9 || digit===6){
               goodNum = true
             }
             if(digit===3 || digit===4 || digit===7){
-                goodNum= false
+                isValid = false
                 break
             }
         }
-        if(goodNum){
+        if(goodNum && isValid){
             count++
         }
-        check--
-        num--
     }return count
 };
