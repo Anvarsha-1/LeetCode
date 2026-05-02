@@ -14,9 +14,6 @@ var countPrefixSuffixPairs = function(words) {
 };
 
 function isPrefixAndSuffix(str1,str2){
-    let prefix = str2.slice(0,str1.length)
-    let sufix = str2.slice(str2.length-str1.length)
-    if(prefix===str1 && sufix===str1){
-        return true
-    }return false
+  if(str1.length>str2.length) return false
+    return str2.startsWith(str1) && str2.endsWith(str1)
 }
