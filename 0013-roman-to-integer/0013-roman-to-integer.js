@@ -7,7 +7,7 @@ var romanToInt = function(s) {
     let result = 0
     for(let i=0;i<s.length;i++){
         let check = s[i]+s[i+1] 
-        if( Object.hasOwn(roman,check)){
+        if(roman[check]){
             result+=roman[check]
             i++
         }else{
