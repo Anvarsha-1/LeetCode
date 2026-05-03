@@ -11,10 +11,8 @@ var rotateString = function (s, goal) {
         let first = str[0]
         for (let j = 0; j < str.length-1; j++) {
             str[j] = str[j + 1]
-            console.log(str.join(""))
         }
         str[str.length - 1] = first
-        console.log("after rotate",str.join(""))
         if (str.join("") === goal) return true
     } return false
 };
