@@ -3,9 +3,13 @@
  * @return {number[]}
  */
 var minCosts = function(cost) {
+    let result =[]
+    let minValue = Infinity
     for(let i=0;i<cost.length;i++){
-        if(cost[i]<cost[i+1]){
-            cost[i+1] = cost[i]
+        if(cost[i]<minValue){
+            minValue = cost[i]
         }
-    }return cost
+            result[i] = minValue
+        
+    }return result
 };
