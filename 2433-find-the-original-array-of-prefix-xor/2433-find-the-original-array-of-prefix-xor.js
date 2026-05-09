@@ -7,6 +7,5 @@ var findArray = function(pref) {
     for(let i=1;i<pref.length;i++){
         pref[i] ^= prev
         prev ^= pref[i]
-        console.log(prev)
     }return pref
 };
