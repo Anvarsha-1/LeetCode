@@ -21,9 +21,8 @@ var minimumPushes = function(word) {
             k+=1
             inc+=8
         }
-       
         pushes+=sorted[i][j] * k
-        console.log(sorted[i][j],"*",k,"inc",inc,i,pushes)
+
      }
    }
     return pushes 
