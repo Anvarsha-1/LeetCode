@@ -9,8 +9,7 @@ var minimumPushes = function(word) {
         map[val] = (map[val]||0)+1
     }
     let sorted = Object.entries(map).sort((a,b)=> b[1]-a[1])
-    console.log(sorted)
-    console.log(map)
+
    let pushes = 0
    let inc = 8
    let k = 1
