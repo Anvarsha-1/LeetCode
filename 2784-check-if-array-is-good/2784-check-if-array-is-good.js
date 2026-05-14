@@ -11,7 +11,6 @@ var isGood = function(nums) {
    if(max>Object.keys(hash).length)return false
    for(let key in hash){
     if(hash[key]>1 && key!=max){
-        console.log(hash[key],key,max)
         return false
     }
    }
