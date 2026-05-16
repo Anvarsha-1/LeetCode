@@ -7,7 +7,6 @@ var alternateDigitSum = function(n) {
     let string = n.toString()
     let i=1
     while(i<=string.length){
-        console.log(string[i-1])
         if(i%2!==0){
             sum+=Number(string[i-1])
         }else{
