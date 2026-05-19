@@ -10,12 +10,26 @@ var getCommon = function (nums1, nums2) {
     //   result =  values ? values : result
     // }return result
    // -------------------------------------------
-   let set = new Set(nums1)
-   for(let val of nums2){
-    if(set.has(val)){
-        return val
-    }
-   }return -1
+//    let set = new Set(nums1)
+//    for(let val of nums2){
+//     if(set.has(val)){
+//         return val
+//     }
+//    }return -1
+
+    //------------------------------------------
+
+    let i = 0
+    let j = 0
+    while(i<nums1.length && j< nums2.length){
+        if(nums1[i]===nums2[j])return nums1[i]
+        console.log(nums1[i],nums2[j])
+        if(nums1[i]<nums2[j]){
+            i++
+        }else if(nums2[j]<nums1[i]){
+            j++
+        }
+    }return -1
 };
 
 // function searchValue(val,nums1) {
