@@ -12,7 +12,6 @@ var isAnagram = function(s, t) {
         if(hash[char]){
             hash[char]--
             if(hash[char]===0) delete hash[char]
-            if(hash[char]<0)return false
         }else{
             return false
         }
