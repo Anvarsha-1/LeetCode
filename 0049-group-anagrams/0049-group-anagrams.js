@@ -3,19 +3,29 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-    let hash = new Map()
-
-    for (let str of strs) {
-        let count = new Array(26).fill(0)
-
-        for (let char of str) {
-            count[char.charCodeAt(0) - "a".charCodeAt(0)]++
+    let result = []
+    let answer = []
+    let seen = {}
+    for (let i = 0; i < strs.length; i++) {
+        result[i] = strs[i].split("").sort().join("")
+    }
+    let index = 0
+    console.log(result)
+    for (let i = 0; i < result.length; i++) {
+        let str = result[i]
+        if (seen[str]===undefined) {
+            seen[str] = index
+            console.log(str,seen[str],index)
+            index+=1
         }
-      const key = count.join("#")
+         else {
+            answer[seen[str]].push(strs[i])
+        }
+        if (!answer[seen[str]]) {
+            answer[seen[str]] = []
+            answer[seen[str]].push(strs[i])
+        }
 
-      if(!hash.has(key)){
-        hash.set(key,[])
-      }
-      hash.get(key).push(str)
-    }return Array.from(hash.values())
+    } 
+    return answer
 };
