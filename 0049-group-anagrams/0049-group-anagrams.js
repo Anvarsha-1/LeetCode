@@ -10,12 +10,10 @@ var groupAnagrams = function (strs) {
         result[i] = strs[i].split("").sort().join("")
     }
     let index = 0
-    console.log(result)
     for (let i = 0; i < result.length; i++) {
         let str = result[i]
         if (seen[str]===undefined) {
             seen[str] = index
-            console.log(str,seen[str],index)
             index+=1
         }
          else {
