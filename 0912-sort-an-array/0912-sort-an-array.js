@@ -6,7 +6,6 @@ var sortArray = function(nums) {
    return MergeSort(nums)
 };
 
-
 function MergeSort(arr){
     if(arr.length<=1)return arr
 
@@ -15,10 +14,6 @@ function MergeSort(arr){
     let left = MergeSort(arr.slice(0,middle))
     let right = MergeSort(arr.slice(middle))
 
-    return Merge(left,right)
-}
-
-function Merge(left,right){
     let leftIndex = 0
     let rightIndex = 0
     let result = []
@@ -33,5 +28,9 @@ function Merge(left,right){
         }
     }
 
-    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))  
+    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex)) 
+}
+
+function Merge(left,right){
+     
 }
