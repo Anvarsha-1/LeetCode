@@ -11,7 +11,6 @@ var numberOfSpecialChars = function(word) {
     if(code>96){
         occurence[val] = index
     }else if(code<96 && occurence[val]==undefined){
-        
         occurence[val] = index
     }
     index++
@@ -29,6 +28,5 @@ var numberOfSpecialChars = function(word) {
     }else if(check<96 && seen[check] && char1>char2){
         count++
     }
-    console.log(seen[check],occurence[seen[check]],occurence[key])
   }return count  
 };
