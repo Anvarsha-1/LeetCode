@@ -5,15 +5,17 @@
  */
 var totalWaviness = function (num1, num2) {
     let count = 0
-    num1 = num1<100 ? 100 : num1
+    num1 = num1 < 100 ? 100 : num1
     for (let i = num1; i <= num2; i++) {
         let n = i.toString()
         for (let j = 1; j <= n.length - 2; j++) {
-            if (n[j] > n[j - 1] && n[j] > n[j + 1]) {  //peak
+            let left = n[j - 1]
+            let right = n[j + 1]
+            if (n[j] > left && n[j] > right) {  //peak
                 count++
-            } else if (n[j] < n[j - 1] && n[j] < n[j + 1]) { // valley
+            } else if (n[j] < left && n[j] < right) { // valley
                 count++
             }
         }
-    }return count
+    } return count
 };
