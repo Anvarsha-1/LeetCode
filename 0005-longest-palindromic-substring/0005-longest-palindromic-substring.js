@@ -3,28 +3,32 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    let res = ""
-    let resLen = 0
-    for(let i=0;i<s.length;i++){
-        let l=i,r=i
-        while(l>=0 && r<s.length && s[l]===s[r]){
-            if(r-l+1>resLen){
-                res = s.substring(l,r+1)
-                resLen = r-l+1
-            }
-            l-=1
-            r+=1
+   let start = 0
+   let maxLen = 0
+
+   for(let i=0;i<s.length;i++){
+    let l = i
+    let r = i
+
+    while(l>=0 && r<s.length && s[l]===s[r]){
+        if(r-l+1>maxLen){
+            maxLen = r-l+1
+            start = l
         }
-        l = i
-        r = i+1
-        while(l>=0 && r<s.length && s[l]===s[r]){
-            if(r-l+1>resLen){
-                res = s.substring(l,r+1)
-                resLen = r-l+1
-            }
-            l-=1
-            r+=1
+        l-=1
+        r+=1
+    }
+     l = i
+     r = i+1
+    while(l>=0 && r<s.length && s[l]===s[r]){
+        if((r-l)+1>maxLen){
+            maxLen = r-l+1
+            start = l
         }
-    }return res
+        l-=1
+        r+=1
+    }
+    
+   }return s.substring(start,start+maxLen)
 };
 
