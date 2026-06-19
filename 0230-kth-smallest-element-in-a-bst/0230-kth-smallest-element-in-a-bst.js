@@ -12,14 +12,18 @@
  * @return {number}
  */
 var kthSmallest = function(root, k) {
-    let result = []
-   const inOrder=(node,result)=>{
-        if(!node) return
-        inOrder(node.left,result)
-        result.push(node.val)
-        inOrder(node.right,result)
+    let count = 0
+    let result = null
+   function inOrder(node){
+        if(!node || result!=null) return
+        inOrder(node.left)
+        count++
+        if(count===k){
+            result = node.val
+            return
+        }
+        inOrder(node.right)
     }
- 
-     inOrder(root,result)
-    return result[k-1] 
+    inOrder(root)
+    return result
 };
