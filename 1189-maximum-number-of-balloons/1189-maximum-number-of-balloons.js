@@ -12,7 +12,6 @@ var maxNumberOfBalloons = function(text) {
         }
     }
     let result = Infinity
-    console.log(freq)
     if(Object.keys(freq).length<Object.keys(mapTarget).length) return 0
     for(let char in freq){
         min =  Math.floor(freq[char]/mapTarget[char])
