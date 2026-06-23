@@ -14,8 +14,9 @@ var invertTree = function(root) {
     if(!root) return null
     let queue = []
     queue.push(root)
-    while(queue.length){
-        let cur = queue.shift()
+    let index = 0
+    while(queue.length>index){
+        let cur = queue[index++]
         let temp = cur.left
         cur.left = cur.right
         cur.right = temp
