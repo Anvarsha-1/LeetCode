@@ -30,7 +30,6 @@ for(let i=0;i<title.length;i++){
         str+=""
       capitalized = false
     }
-    console.log(capitalized )
     
     if(!capitalized && title[i+1]!==" " && title[i+2]!==" " && i+2!==title.length & i+1!==title.length){
            str +=  title[i].toUpperCase()
