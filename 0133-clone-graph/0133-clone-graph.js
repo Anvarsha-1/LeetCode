@@ -32,6 +32,6 @@ var cloneGraph = function (node) {
             }
         } return root
     }
-    let root = dfs(node)
-    return root
+    
+    return dfs(node)
 };
