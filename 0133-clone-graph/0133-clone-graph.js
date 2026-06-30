@@ -16,20 +16,15 @@ var cloneGraph = function (node) {
     const dfs = (node, visited = new Map()) => {
         if (!node) return
 
-        let  root = new _Node(node.val)
+       
         if (visited.has(node.val)) {
-            root.neighbors.push(visited.get(node.val))
-            return
+            return visited.get(node.val)
         }
+        let  root = new _Node(node.val)
         visited.set(node.val, root)
 
         for (let nei of node.neighbors) {
-            if (!visited.has(nei.val)) {
-                console.log(nei.val)
                root.neighbors.push(dfs(nei, visited))
-            }else{
-                root.neighbors.push(visited.get(nei.val))
-            }
         } return root
     }
     
